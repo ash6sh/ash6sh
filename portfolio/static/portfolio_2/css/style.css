@@ -127,17 +127,14 @@ body::before{
     z-index:10;
 }
 
-.hero{
-    min-height:65vh;
-
-    display:flex;
-    align-items:flex-start;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding-top:90px;
+.hero {
+    min-height: auto;      /* or even 40vh */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;     /* reduced from 90px */
+    padding-bottom: 10px;
 }
 
 .hero-content{
@@ -222,13 +219,13 @@ body::before{
 ========================= */
 
 .about{
-    padding-top:50px;
+    padding-top:40px;
     padding-bottom:10px;
 }
 
 .about .section-header{
     font-size:2rem;
-    margin-bottom:50px;
+    margin-bottom:10px;
 }
 
 .about .section-header h2{
@@ -454,13 +451,13 @@ body::before{
 
 .services{
     padding:70px 0 20px;
-    padding-top:20px;
+    padding-top:10px;
     position:relative;
 }
 
 .services .section-header{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .services .section-header span{
