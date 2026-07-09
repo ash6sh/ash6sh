@@ -148,22 +148,23 @@ Hi, I'm Ashish, a professional video editor with 6+ years of experience and 400+
             <div class="work-card">
 
                 {% if project.video %}
-                <video
-                    class="work-video"
-                    controls
-                    {% if project.thumbnail %}poster="{{ project.thumbnail.url }}"{% endif %}
-                >
-                    <source src="{{ project.video.url }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+<video
+    class="work-video"
+    controls
+    preload="metadata"
+    {% if project.thumbnail %}poster="{{ project.thumbnail.url }}"{% endif %}
+>
+    <source src="{{ project.video.url }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-                {% elif project.thumbnail %}
-                <img
-                    src="{{ project.thumbnail.url }}"
-                    alt="{{ project.title }}"
-                    class="work-thumb"
-                >
-                {% endif %}
+{% elif project.thumbnail %}
+<img
+    src="{{ project.thumbnail.url }}"
+    alt="{{ project.title }}"
+    class="work-thumb"
+>
+{% endif %}
 
                 <div class="work-info">
                     {% if project.title %}
