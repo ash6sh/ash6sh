@@ -375,35 +375,31 @@ body::before{
     position:absolute;
     inset:0;
 }
-
 .work-info{
     position: absolute;
-
-    left: 30px;
-    right: 30px;
-    bottom: 30px;
-
+    left: 35px;
+    right: 35px;
+    bottom: 80px;   /* Above the video timeline */
     z-index: 2;
 
-    padding: 0;
-
     background: transparent;
+    padding: 0;
 
     pointer-events: none;
 }
 
 .work-info h3{
-    color: #fff;
     font-size: 2rem;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,.6);
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,.7);
 }
 
 .work-info p{
     color: #f1f5f9;
     font-size: 1rem;
-    line-height: 1.5;
-    text-shadow: 0 2px 8px rgba(0,0,0,.6);
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0,0,0,.7);
 }
 
 /* =========================
@@ -831,20 +827,28 @@ body::before{
 
 }
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
     .work-info{
+        position: absolute;
         left: 18px;
         right: 18px;
-        bottom: 18px;
+        bottom: 70px;   /* Above the video controls */
+        z-index: 2;
+        background: transparent;
+        pointer-events: none;
     }
 
     .work-info h3{
         font-size: 1.7rem;
+        margin-bottom: 6px;
+        text-shadow: 0 2px 8px rgba(0,0,0,.7);
     }
 
     .work-info p{
         font-size: .95rem;
+        line-height: 1.4;
+        text-shadow: 0 2px 8px rgba(0,0,0,.7);
     }
 
 }
