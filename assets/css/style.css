@@ -120,12 +120,6 @@ body::before{
    6. HERO SECTION
 ========================= */
 
-.hero,
-.hero-content,
-.works{
-    position:relative;
-    z-index:10;
-}
 
 .hero {
     min-height: auto;      /* or even 40vh */
@@ -257,13 +251,12 @@ body::before{
 ========================= */
 
 .works{
-    padding:80px 0 50px;
-    padding-top:80px;
+    padding:80px 0;
 }
 
 .section-header{
     text-align:center;
-    margin-bottom:65px;
+    margin-bottom:55px;
 }
 
 .section-header span{
@@ -274,135 +267,230 @@ body::before{
 
 .section-header h2{
     font-size:1rem;
-    margin:20px 0;
+    margin-top:18px;
 }
 
-.section-header p{
-    color:#9ca3af;
+/* Layout */
+
+.works-layout{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
 }
 
-.work-grid{
+.featured{
+    width:100%;
+}
+
+.work-row{
     display:grid;
-
-    grid-template-columns:1.8fr 1fr;
-
-    grid-template-areas:
-    "big small1"
-    "big small2";
-
-    gap:24px;
-    margin-bottom: 30px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px;
 }
 
-.large{
-    grid-area:big;
-    min-height:650px;
-}
-
-.work-card:nth-child(2){
-    grid-area:small1;
-}
-
-.work-card:nth-child(3){
-    grid-area:small2;
-}
+/* Cards */
 
 .work-card{
+
     position:relative;
 
     overflow:hidden;
 
-    min-height:300px;
+    border-radius:28px;
 
-    border-radius:30px;
-
-    background:rgba(255,255,255,.03);
+    background:rgba(255,255,255,.04);
 
     border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(30px);
-    -webkit-backdrop-filter:blur(30px);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
     box-shadow:
-    0 8px 40px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.05);
+        0 12px 35px rgba(0,0,0,.28);
 
-    transition:.4s;
+    transition:.35s ease;
+    isolation:isolate;
 }
 
 .work-card:hover{
-    transform:translateY(-10px);
 
-    border-color:rgba(77,140,255,.25);
+    transform:translateY(-6px);
+
+    border-color:rgba(77,140,255,.28);
 
     box-shadow:
-    0 15px 50px rgba(0,0,0,.4),
-    0 0 30px rgba(0,102,255,.08);
+       0 10px 30px rgba(0,0,0,.35);
+
 }
 
-.work-image{
-    position:absolute;
-    inset:0;
-
-    background:
-
-    radial-gradient(
-        circle at top left,
-        rgba(0,102,255,.18),
-        transparent 45%
-    ),
-
-    radial-gradient(
-        circle at bottom right,
-        rgba(0,102,255,.10),
-        transparent 60%
-    );
-}
+/* Video */
 
 .work-video{
+
+    width:100%;
+
     display:block;
-    width:100%;
-    height:auto;
-}
 
-.work-thumb{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+    aspect-ratio:16/9;
 
-.work-thumb{
-    width:100%;
-    height:100%;
     object-fit:cover;
+    transition:transform .5s ease;
+
+}
+.work-card:hover .work-video{
+    transform:scale(1.03);
+}
+/* Overlay */
+
+.work-card::after{
+
+    content:"";
+
     position:absolute;
+
     inset:0;
+
+    pointer-events:none;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.22) 42%,
+        transparent 70%
+    );
+
 }
+
+/* Text */
+
 .work-info{
-    position: absolute;
-    left: 35px;
-    right: 35px;
-    bottom: 55px;   /* Try 55px */
-    z-index: 2;
-    background: transparent;
-    padding: 0;
-    pointer-events: none;
+
+    position:absolute;
+
+    left:28px;
+    right:28px;
+
+    bottom:56px;
+
+    z-index:2;
+
+    pointer-events:none;
+
 }
 
 .work-info h3{
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,.7);
+
+    color:#fff;
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    text-shadow:0 4px 18px rgba(0,0,0,.8);
+
 }
 
 .work-info p{
-    color: #f1f5f9;
-    font-size: 1rem;
-    line-height: 1.6;
-    text-shadow: 0 2px 10px rgba(0,0,0,.7);
+
+    color:#eef2f7;
+
+    font-size:.95rem;
+
+    line-height:1.5;
+
+    max-width:60%;
+
+    text-shadow:0 3px 12px rgba(0,0,0,.8);
+
 }
 
+/* Featured */
+
+.featured .work-info h3{
+
+    font-size:2.2rem;
+
+}
+
+.featured .work-info p{
+
+    font-size:1rem;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .works{
+
+        padding:60px 0;
+
+    }
+
+    .works-layout{
+
+        gap:22px;
+
+    }
+
+    .work-row{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:14px;
+
+    }
+
+    .work-info{
+
+        left:16px;
+        right:16px;
+        bottom:46px;
+
+    }
+
+    .featured .work-info h3{
+
+        font-size:1.5rem;
+
+    }
+
+    .featured .work-info p{
+
+        font-size:.85rem;
+
+    }
+
+    .work-info h3{
+
+        font-size:1rem;
+
+        margin-bottom:4px;
+
+    }
+
+    .work-info p{
+
+        font-size:.72rem;
+
+        line-height:1.3;
+
+        max-width:100%;
+
+        display:-webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+
+    }
+
+}
 /* /* =========================
    10. VIEW ALL WORKS BUTTON
 ========================= */
@@ -744,36 +832,11 @@ body::before{
         font-size:3rem;
         letter-spacing:-2px;
     }
-
-    .work-grid{
-        grid-template-columns:1fr;
-        margin-bottom:10px;
-
-        grid-template-areas:
-        "big"
-        "small1"
-        "small2";
-    }
-     .work-card{
-        min-height:auto;
-    }
-
-    .work-video{
-        display:block;
-        width:100%;
-        height:auto;
-    }
-    .works{
-        padding:50px 0 20px;
-        
-    }
      .view-all-btn{
         margin-top:0;
     }
 
-    .large{
-        min-height:400px;
-    }
+    
 
     .cursor{
         width:40px;
@@ -844,30 +907,6 @@ body::before{
 
 }
 
-@media (max-width:768px){
 
-    .work-info{
-        position: absolute;
-        left: 20px;
-        right: 20px;
-        bottom: 40px;   /* Above the video controls */
-        z-index: 2;
-        background: transparent;
-        pointer-events: none;
-    }
-
-    .work-info h3{
-        font-size: 1.5rem;
-        margin-bottom: 6px;
-        text-shadow: 0 2px 8px rgba(0,0,0,.7);
-    }
-
-    .work-info p{
-        font-size: .95rem;
-        line-height: 1.2;
-        text-shadow: 0 2px 8px rgba(0,0,0,.7);
-    }
-
-}
 
 
