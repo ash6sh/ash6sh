@@ -870,4 +870,28 @@ body::before{
 
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        position: absolute;
+        left: 8%;
+        right: auto;
+        bottom: 18%;
+        transform: none;
+        text-align: left;
+        max-width: 85%;
+        z-index: 2;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-top: 10px;
+    }
+}
+
 
