@@ -291,55 +291,39 @@ body::before{
 /* Cards */
 
 .work-card{
-
     position:relative;
-
     overflow:hidden;
-
     border-radius:28px;
-
     background:rgba(255,255,255,.04);
-
     border:1px solid rgba(255,255,255,.08);
-
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.28);
-
+    box-shadow:0 12px 35px rgba(0,0,0,.28);
     transition:.35s ease;
     isolation:isolate;
 }
 
 .work-card:hover{
-
     transform:translateY(-6px);
-
     border-color:rgba(77,140,255,.28);
-
-    box-shadow:
-       0 10px 30px rgba(0,0,0,.35);
-
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 /* Video */
 
 .work-video{
-
     width:100%;
     display:block;
     aspect-ratio:16/9;
     object-fit:cover;
     transition:transform .5s ease;
-
 }
 
 .work-card:hover .work-video{
     transform:scale(1.03);
 }
 
-/* Native aspect ratio in fullscreen */
+/* Fullscreen */
 
 .work-video:fullscreen{
     width:100%;
@@ -358,82 +342,64 @@ body::before{
 /* Overlay */
 
 .work-card::after{
-
     content:"";
-
     position:absolute;
-
     inset:0;
-
     pointer-events:none;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         to top,
         rgba(0,0,0,.88),
         rgba(0,0,0,.22) 42%,
         transparent 70%
     );
-
 }
 
 /* Text */
 
 .work-info{
-
     position:absolute;
-
     left:28px;
     right:28px;
-
     bottom:56px;
-
     z-index:2;
-
     pointer-events:none;
-
 }
 
 .work-info h3{
-
     color:#fff;
-
-    font-size:1.8rem;
-
+    font-size:clamp(1.15rem,2vw,1.8rem);
     font-weight:700;
-
     margin-bottom:8px;
-
     text-shadow:0 4px 18px rgba(0,0,0,.8);
-
 }
 
 .work-info p{
-
     color:#eef2f7;
-
-    font-size:.95rem;
-
+    font-size:clamp(.75rem,1.1vw,.95rem);
     line-height:1.5;
-
-    max-width:60%;
-
+    max-width:70%;
     text-shadow:0 3px 12px rgba(0,0,0,.8);
-
 }
 
 /* Featured */
 
 .featured .work-info h3{
-
-    font-size:2.2rem;
-
+    font-size:clamp(1.6rem,2.8vw,2.2rem);
 }
 
 .featured .work-info p{
+    font-size:clamp(.9rem,1.3vw,1rem);
+}
 
-    font-size:1rem;
+/* Bottom cards */
 
+.work-row .work-info h3{
+    font-size:clamp(1rem,1.6vw,1.45rem);
+}
+
+.work-row .work-info p{
+    font-size:clamp(.72rem,1vw,.9rem);
+    max-width:100%;
 }
 
 /* =========================
