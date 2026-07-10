@@ -360,9 +360,14 @@ body::before{
     position:absolute;
     left:28px;
     right:28px;
+    top:0;
     bottom:56px;
     z-index:2;
     pointer-events:none;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
 }
 
 .work-info h3{
@@ -424,7 +429,12 @@ body::before{
     .work-info{
         left:16px;
         right:16px;
+        top:0;
         bottom:42px;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
     }
 
     .featured .work-info h3{
