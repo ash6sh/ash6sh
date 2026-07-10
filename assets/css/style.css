@@ -850,21 +850,21 @@ body::before{
         position: absolute;
         left: 20px;
         right: 20px;
-        bottom: 50px;   /* Above the video controls */
+        bottom: 40px;   /* Above the video controls */
         z-index: 2;
         background: transparent;
         pointer-events: none;
     }
 
     .work-info h3{
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         margin-bottom: 6px;
         text-shadow: 0 2px 8px rgba(0,0,0,.7);
     }
 
     .work-info p{
         font-size: .95rem;
-        line-height: 1.4;
+        line-height: 1.2;
         text-shadow: 0 2px 8px rgba(0,0,0,.7);
     }
 
